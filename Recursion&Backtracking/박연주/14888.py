@@ -14,8 +14,8 @@ def dfs(depth, result, add, sub, mul, div):
     if mul:
         dfs(depth+1, result*input_list[depth], add, sub, mul-1, div)
     if div:
+        # int(/): 부동소수점 계산하고 소수점 이하 자름, //: 정수 나눗셈 나눗셈을 수행하면서도 소수점 이하 바로 버리고 계산 
         dfs(depth+1, int(result/input_list[depth]), add, sub, mul, div-1)
-    
         
     
 list_size = int(input())
