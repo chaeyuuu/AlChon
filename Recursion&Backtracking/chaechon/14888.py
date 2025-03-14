@@ -7,7 +7,7 @@ n = int(input())
 num_list = list(map(int, input().split())) # append 사용하면 이중 리스트가 됨
 op_list = list(map(int, input().split()))
 result_list = []
-max_result , min_result = -1e9, 1e9
+max_result , min_result = -1e10, 1e10
 ops = []
 symbol = ['+', '-', '*', '/']
 
