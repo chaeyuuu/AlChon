@@ -1,66 +1,71 @@
 const fs = require("fs");
-const input = fs.readFileSync("./input.txt").toString().trim().split("\n");
+const input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
 
-let result = [];
+let n = Number(input[0]);
+let numbers = input[1].split(" ").map(Number);
+let operators = input[2].split(" ").map(Number);
 
-function permutation(arr, selectNum) {
-  let result = [];
-  if (selectNum === 1) return arr.map((v) => [v]);
+let maxResult = -Infinity;
+let minResult = Infinity;
 
-  arr.forEach((v, idx, arr) => {
-    const fixer = v;
-    const restArr = arr.filter((_, index) => index !== idx);
-    const permuationArr = permutation(restArr, selectNum - 1);
-    const combineFixer = permuationArr.map((v) => [fixer, ...v]);
-    result.push(...combineFixer);
-  });
-  return result;
-}
-
-function recur(n, number, op_set) {
-  for (let i = 0; i < op_set.length; i++) {
-    let temp = number[0];
-    for (let j = 0; j < n - 1; j++) {
-      if (op_set[i][j] === "+") {
-        temp += number[j + 1];
-      } else if (op_set[i][j] === "-") {
-        temp -= number[j + 1];
-      } else if (op_set[i][j] === "*") {
-        temp *= number[j + 1];
-      } else if (op_set[i][j] === "/") {
-        if (temp < 0) {
-          temp = -Math.floor(Math.abs(temp) / number[j + 1]);
-        } else {
-          temp = Math.floor(temp / number[j + 1]);
-        }
-      }
-    }
-    result.push(temp);
+function backtrack(idx, currentValue, plus, minus, multi, divide) {
+  if (idx === n) {
+    maxResult = Math.max(maxResult, currentValue);
+    minResult = Math.min(minResult, currentValue);
+    return;
   }
 
-  console.log(Math.max(...result));
-  console.log(Math.min(...result));
+  if (plus > 0) {
+    backtrack(
+      idx + 1,
+      currentValue + numbers[idx],
+      plus - 1,
+      minus,
+      multi,
+      divide
+    );
+  }
+  if (minus > 0) {
+    backtrack(
+      idx + 1,
+      currentValue - numbers[idx],
+      plus,
+      minus - 1,
+      multi,
+      divide
+    );
+  }
+  if (multi > 0) {
+    backtrack(
+      idx + 1,
+      currentValue * numbers[idx],
+      plus,
+      minus,
+      multi - 1,
+      divide
+    );
+  }
+  if (divide > 0) {
+    let newValue =
+      currentValue < 0
+        ? -Math.floor(Math.abs(currentValue) / numbers[idx])
+        : Math.floor(currentValue / numbers[idx]);
+
+    backtrack(idx + 1, newValue, plus, minus, multi, divide - 1);
+  }
 }
 
 const solution = () => {
-  let n = +input[0];
-
-  let number = [];
-  input[1].split(" ").forEach((item) => number.push(+item));
-
-  let op = [];
-  input[2].split(" ").forEach((item) => op.push(item));
-
-  let op_list = [];
-  let symbol = ["+", "-", "*", "/"];
-  for (let i = 0; i < 4; i++) {
-    for (let j = 0; j < op[i]; j++) {
-      op_list.push(symbol[i]);
-    }
-  }
-
-  let op_set = [...new Set(permutation(op_list, op_list.length))];
-  recur(n, number, op_set);
+  backtrack(
+    1,
+    numbers[0],
+    operators[0],
+    operators[1],
+    operators[2],
+    operators[3]
+  );
+  console.log(maxResult === 0 ? 0 : maxResult);
+  console.log(minResult === 0 ? 0 : minResult);
 };
 
 solution();
