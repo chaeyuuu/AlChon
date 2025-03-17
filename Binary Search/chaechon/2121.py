@@ -6,14 +6,14 @@ import sys
 
 input = sys.stdin.readline
 N = int(input())
-nlist, temp = [], []
+nlist, temp = set(), []
 result=0
 
 a,b = map(int,input().split())
 
 for _ in range(N):
     x, y = map(int,input().split())
-    nlist.append((x,y))
+    nlist.add((x,y))
     
 for x,y in nlist:
     if (x+a, y) in nlist and (x, y+b) in nlist and (x+a, y+b) in nlist:
