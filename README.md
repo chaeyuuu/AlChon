@@ -5,7 +5,7 @@
 | 회차 | 날짜       | 요일   | 시간     | 주제         | 문제                                    |
 | --- | ---------- | ---------- | --------------------------------------- | ----- | ------- |
 | 1   | 2025-03-11 | 화요일 | 3:00 PM |  Recursion, Backtracking  | [17478](https://www.acmicpc.net/problem/17478) [24460](https://www.acmicpc.net/problem/24460) [14888](https://www.acmicpc.net/problem/14888)
-| 2   | 2025-03-19 |   수요일  | 5:00 PM |BinarySearch | [2417](https://www.acmicpc.net/problem/2417) [11055](https://www.acmicpc.net/problem/11055) [2121](https://www.acmicpc.net/problem/2121) [14233](https://www.acmicpc.net/problem/14233) |
+| 2   | 2025-03-19 |   수요일  | 5:00 PM |BinarySearch | [2417](https://www.acmicpc.net/problem/2417) [2121](https://www.acmicpc.net/problem/2121) [14233](https://www.acmicpc.net/problem/14233) |
 | 3   | 2025-03-26 |  수요일  | 5:00 PM |       | |
 | 4   | 2025-04-03 |    목요일  | 5:00 PM |     | |
 | 5  | 2025-04-10 |  목요일  | 5:00 PM |       | |
