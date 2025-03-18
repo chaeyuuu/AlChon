@@ -14,7 +14,7 @@ while start <= end:
     # 이 mid 값으로 모든 일의 마감기한이 가능한지 확인
     for i in range(n):
         if mid * (i+1) > deadline[i]:
-            valid == False
+            valid = False
             break
         
     # 가능하면 start = mid + 1 해서 확인
