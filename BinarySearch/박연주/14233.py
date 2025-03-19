@@ -28,6 +28,6 @@ deadline = list(map(int, sys.stdin.readline().strip().split()))
 deadline.sort()
 
 low = 1 # 마감 기한의 최솟값은 1
-high = deadline[0]
+high = deadline[0] # 첫 마감기한 통과를 위해, 일한 시간은 무조건 이 이하가 되어야함.
 
 print(binarySearch(low, high))
