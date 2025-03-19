@@ -8,7 +8,7 @@
 | ---- | ---------- | ------ | ------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1    | 2025-03-11 | 화요일 | 3:00 PM | Recursion, Backtracking | [17478](https://www.acmicpc.net/problem/17478) [24460](https://www.acmicpc.net/problem/24460) [14888](https://www.acmicpc.net/problem/14888) |
 | 2    | 2025-03-19 | 수요일 | 5:00 PM | BinarySearch            | [2417](https://www.acmicpc.net/problem/2417) [2121](https://www.acmicpc.net/problem/2121) [14233](https://www.acmicpc.net/problem/14233)     |
-| 3    | 2025-03-26 | 수요일 | 5:00 PM |                         |                                                                                                                                              |
+| 3    | 2025-03-26 | 수요일 | 5:00 PM |   DynamicProgramming   | [10870](https://www.acmicpc.net/problem/10870) [1463](https://www.acmicpc.net/problem/1463) [11659](https://www.acmicpc.net/problem/11659) [1904](https://www.acmicpc.net/problem/1904) |
 | 4    | 2025-04-03 | 목요일 | 5:00 PM |                         |                                                                                                                                              |
 | 5    | 2025-04-10 | 목요일 | 5:00 PM |                         |                                                                                                                                              |
 
