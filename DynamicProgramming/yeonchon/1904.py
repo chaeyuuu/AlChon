@@ -22,12 +22,12 @@ def dp(n):
 import sys
 
 n = int(sys.stdin.readline().strip())
-nList = [0] * (n + 1) # 0일때는 경우의 수 0, 1일때는 경우의 수 1, 2일땐 2
 
 if n == 1 or n == 2:
     print(n)
     exit()
-
+    
+nList = [0] * (n + 1) # 0일때는 경우의 수 0, 1일때는 경우의 수 1, 2일땐 2
 nList[1] = 1
 nList[2] = 2
 
