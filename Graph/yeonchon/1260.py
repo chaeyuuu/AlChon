@@ -40,11 +40,6 @@ graph = {i: [] for i in range(1, v + 1)}
 for i in range(e):
     
     a, b = map(int, sys.stdin.readline().strip().split())
-    
-    if a not in graph:
-        graph[a] = list()
-    if b not in graph:
-        graph[b] = list()
         
     graph[a].append(b)
     graph[b].append(a)
