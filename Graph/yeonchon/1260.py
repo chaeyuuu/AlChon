@@ -13,9 +13,8 @@ def dfs(graph, start):
             print(node, end=" ")
             
             # 정점 번호가 작은 것을 먼저 방문
-            if node in graph.keys():
-                for nextNode in reversed(graph[node]):
-                    stack.append(nextNode)
+            for nextNode in reversed(graph[node]):
+                stack.append(nextNode)
     print()        
                 
           
@@ -29,15 +28,15 @@ def bfs(graph, start):
         node = queue.popleft() # 맨 앞 값 제거 후 반환
         print(node, end=" ")
         
-        if node in graph.keys():
-            for nextNode in graph[node]:
-                if nextNode not in visited:
-                    visited.add(nextNode) # 방문 set 에 추가
-                    queue.append(nextNode) # 맨 뒤에 추가
+        for nextNode in graph[node]:
+            if nextNode not in visited:
+                visited.add(nextNode) # 방문 set 에 추가
+                queue.append(nextNode) # 맨 뒤에 추가
 
 v, e, start = map(int, sys.stdin.readline().strip().split())
 
-graph = dict() # 인접 리스트로 표현하기 위한 딕셔너리
+# 그래프 초기화
+graph = {i: [] for i in range(1, v + 1)}
 
 for i in range(e):
     
