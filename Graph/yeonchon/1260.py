@@ -16,8 +16,6 @@ def dfs(graph, start):
             for nextNode in reversed(graph[node]):
                 stack.append(nextNode)
     print()        
-                
-          
 
 def bfs(graph, start):
     visited = set()
@@ -32,6 +30,7 @@ def bfs(graph, start):
             if nextNode not in visited:
                 visited.add(nextNode) # 방문 set 에 추가
                 queue.append(nextNode) # 맨 뒤에 추가
+
 
 v, e, start = map(int, sys.stdin.readline().strip().split())
 
