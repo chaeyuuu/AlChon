@@ -10,7 +10,8 @@
 | 2    | 2025-03-19 | 수요일 | 5:00 PM | BinarySearch            | [2417](https://www.acmicpc.net/problem/2417) [2121](https://www.acmicpc.net/problem/2121) [14233](https://www.acmicpc.net/problem/14233)                                                |
 | 3    | 2025-03-26 | 수요일 | 5:00 PM | DynamicProgramming      | [10870](https://www.acmicpc.net/problem/10870) [1463](https://www.acmicpc.net/problem/1463) [11659](https://www.acmicpc.net/problem/11659) [1904](https://www.acmicpc.net/problem/1904) |
 | 4    | 2025-04-03 | 목요일 | 3:00 PM | Graph                   | [4963](https://www.acmicpc.net/problem/4963) [7562](https://www.acmicpc.net/problem/7562) [1260](https://www.acmicpc.net/problem/1260) [2178](https://www.acmicpc.net/problem/2178)     |     |
-| 5    | 2025-04-10 | 목요일 | 5:00 PM | Greedy                  | [1026](https://www.acmicpc.net/problem/1026) [11047](https://www.acmicpc.net/problem/11047) [1541](https://www.acmicpc.net/problem/1541) [1931](https://www.acmicpc.net/problem/1931)   |
+| 5    | 2025-04-10 | 목요일 | 5:00 PM | Greedy                  | [1026](https://www.acmicpc.net/problem/1026) [11047](https://www.acmicpc.net/problem/11047) [1541](https://www.acmicpc.net/problem/1541) [1931](https://www.acmicpc.net/problem/1931)   |     |
+| 6    | 2025-04-10 | 목요일 | 5:00 PM |                         |                                                                                                                                                                                         |
 
 # 스터디 방식
 
