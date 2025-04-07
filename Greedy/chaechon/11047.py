@@ -15,8 +15,10 @@ for i in range(N+1):
     if K == 0:
         break
     
-    while(K >= coin[i]):
-        count += 1
-        K -= coin[i]
-        
+for j in coin:
+    if K >= j:
+        temp = K//j
+        count += temp
+        K -= temp*j
+    
 print(count)
