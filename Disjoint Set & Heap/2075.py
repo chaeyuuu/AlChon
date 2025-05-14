@@ -1,13 +1,20 @@
 import sys
+import heapq
 
 input = sys.stdin.readline
 
 N = int(input())
-duu = []
+heap = []
 for _ in range(N):
-    x = list(map(int, input().split()))
-    duu.append(x)
+    row = list(map(int, input().split()))
+    for num in row:
+        if len(heap) < N:
+            heapq.heappush(heap, num)
+        else:
+            # 인덱스 0에 가장 작은 원소가 저장 되어있음
+            if num > heap[0]:
+                heapq.heappop(heap)
+                heapq.heappush(heap,num)
+                
 
-duu_1 = sum(duu,[])    
-duu_1.sort(reverse=True)
-print(duu_1[N-1])
+print(heap[0])
