@@ -1,19 +1,20 @@
 import sys
+import heapq
+
 input = sys.stdin.readline
 
 N = int(input())
-list = []
+heap = []
 
 for _ in range(N):
     x = int(input())
     
     if x == 0:
-        if len(list) == 0:
+        if len(heap) == 0:
             print(0)
         else:
-            temp = list[-1]
-            print(list[-1])
-            list.pop()
+            temp = heapq.heappop(heap)[1]
+            print(temp)
     else:
-        list.append(x)
-        list.sort()
+        # heap은 기본적으로 최소힙
+        heapq.heappush(heap, (-x,x))
