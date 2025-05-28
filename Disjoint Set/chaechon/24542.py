@@ -2,6 +2,7 @@
 # 포레스트니까 그래프..
 
 import sys
+from collections import deque
 
 input = sys.stdin.readline
 num = 1000000007
@@ -11,15 +12,24 @@ students = {}
 result = 1
 visited = [0] * (N+1)
 
-def dfs(i):
-    visited[i] = 1
-    node = 1
-    # 연결되어 있는 정점들 확인
-    for student in students[i]:
-        if visited[student] == 0:
-            node += dfs(student)
-    return node
+def bfs(i):
+    queue = deque()
+    queue.append(i)
+    size = 1
     
+    visited[i] = 1
+    
+    while queue:
+        x = queue.popleft()
+        for student in students.get(x, []):
+            # 연결 확인
+            if visited[student] == 0:
+                queue.append(student)
+                visited[student] = 1
+                size +=1
+    
+    return size
+                 
 
 for _ in range(M):
     u,v = (map(int, input().split()))
@@ -34,10 +44,9 @@ for _ in range(M):
     
 for i in range(1, N+1):
     if visited[i] == 0:
-        node = dfs(i)
+        node = bfs(i)
         # 노드의 수 곱하기
         result *= node
         result %= num
 
 print(result)
-        
