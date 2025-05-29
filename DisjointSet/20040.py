@@ -1,5 +1,6 @@
 import sys
-input = sys.stdin.readline
+sys.setrecursionlimit(10 ** 8)
+input = lambda: sys.stdin.readline().rstrip()
 
 def find(x):
     if parent[x] == x:
@@ -13,18 +14,26 @@ def union(x, y):
     
     if parentX == parentY:
         return False
-    parent[parentX] = parentY
+    
+    if rank[parentX] > rank[parentY]:
+        parent[parentY] = parentX # 높이가 작은 쪽을 큰 쪽에 붙임
+    elif rank[parentX] < rank[parentY]:
+        parent[parentX] = parentY
+    else:
+        parent[parentX] = parentY
+        rank[parentX] += 1
     return True
 
 n, m = map(int, input().strip().split())
 parent = [i for i in range(n)]
+rank = [0 for _ in range(n)]
 
-def cycle_check():
+def solve():
     for num in range(m):
         x, y = map(int, input().strip().split())
-    
         if not union(x, y):
-            return num+1
-    return 0
+            print(num + 1)
+            return
+    print(0)
 
-print(cycle_check())
+solve()
