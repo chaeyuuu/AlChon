@@ -24,13 +24,13 @@ def union(x, y):
         rank[parentX] += 1
     return True
 
-n, m = map(int, input().strip().split())
+n, m = map(int, input().split())
 parent = [i for i in range(n)]
 rank = [0 for _ in range(n)]
 
 def solve():
     for num in range(m):
-        x, y = map(int, input().strip().split())
+        x, y = map(int, input().split())
         if not union(x, y):
             print(num + 1)
             return
