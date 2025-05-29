@@ -30,12 +30,8 @@ for _ in range(m):
     union(x, y)
     
 sum = 1
-parentSet = set()
-for i in parent:
-    if i != 0: 
-        parentSet.add(i)
+for i in range(1, n+1):
+    if find(i) == i: 
+        sum *= size[i]
         
-for i in parentSet:
-    sum *= size[i]
-        
-print(sum % 1000000007)    
+print(sum % 1000000007)
