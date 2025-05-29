@@ -1,5 +1,6 @@
 import sys
 from collections import deque
+sys.setrecursionlimit(10**6)
 
 input = sys.stdin.readline
 n,m = map(int, input().split())
@@ -19,7 +20,8 @@ def union(a,b):
     
     if a == b:
         return False 
-    parent[b] = a
+    
+    parent[b] = a # 합치기
     return True
         
 
@@ -29,10 +31,7 @@ for i in range(n):
 
 for i in range(1,m+1):
     a, b = map(int, input().split())
-    if union(a,b) == 0:
+    if result == 0 and union(a,b) == 0:
         result = i
-        break
-else:
-    print(0)
 
 print(result)
